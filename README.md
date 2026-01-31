@@ -133,13 +133,13 @@ while True:
 c.close()
 ~~~
 OUTPUT:
-~~~
+
 server-side
 <img width="611" height="273" alt="Screenshot 2026-01-31 100127" src="https://github.com/user-attachments/assets/24dad872-c274-4abe-9586-b767096d6791" />
 
 client-py
 <img width="519" height="237" alt="Screenshot 2026-01-31 100135" src="https://github.com/user-attachments/assets/4e514160-4ace-49c4-82f8-0f694cdb46e7" />
-~~~
+
 
 ## Result:
 Thus the study of Socket Programming Completed Successfully
