@@ -1,5 +1,5 @@
 # Ex.No:1a  			Study of Socket Programming
-
+#REF NO:25015705
 ## Aim: 
 To perform a study on Socket Programming
 ## Introduction:
@@ -52,6 +52,94 @@ Socket programming finds applications in various domains, including web developm
 3.	File Transfer Protocol: Protocols like FTP (File Transfer Protocol) utilize socket programming for transferring files between a client and a server.
 4.	Networked Games: Online multiplayer games rely on socket programming to facilitate communication between game clients and servers.
 5.	RPC mechanisms: which allow processes to execute code on a remote server, often use socket programming for communication.
+
+
+Algorithm for Server Program :
+
+1.Start the program.
+
+2.Import the socket module.
+
+3.Create a socket using socket.socket().
+
+4.Define a port number for communication.
+
+5.Bind the socket to the IP address (127.0.0.1) and the specified port.
+
+6.Put the socket into listening mode using listen().
+
+7.Wait for a client connection using accept().
+
+8.When a client connects, display the client address.
+
+9.Send a connection message to the client.
+
+10.Close the client connection.
+
+11.Stop the program.
+
+Algorithm for Client Program :
+
+1.Start the program.
+
+2.Import the socket module.
+
+3.Create a socket using socket.socket().
+
+4.Specify the server IP address and port number.
+
+5.Connect to the server using connect().
+
+6.Receive the message sent by the server using recv().
+
+7.Display the received message.
+
+8.Close the socket connection.
+
+9.Stop the program.
+
+PROGRAM:
+server.py
+~~~
+import socket             
+s = socket.socket()         
+print ("Socket successfully created")
+port = 12345                
+s.bind(('127.0.0.1', port))         
+print ("socket binded to %s" %(port)) 
+s.listen(5)     
+print ("socket is listening")            
+while True: 
+  c, addr = s.accept()   
+  print ('Got connection from', addr )
+  c.send('Thank you for connecting'.encode()) 
+c.close()
+~~~
+client.py
+~~~
+import socket
+c = socket.socket()
+host = '127.0.0.1'   
+port = 12345
+c.connect((host, port))
+print("Connected to server")
+while True:
+    msg = input("Client: ")
+    c.send(msg.encode())
+    if msg.lower() == "bye":
+        break
+    server_reply = c.recv(1024).decode()
+    print(server_reply)
+c.close()
+~~~
+OUTPUT:
+server-side
+<img width="611" height="273" alt="Screenshot 2026-01-31 100127" src="https://github.com/user-attachments/assets/24dad872-c274-4abe-9586-b767096d6791" />
+
+client-py
+<img width="519" height="237" alt="Screenshot 2026-01-31 100135" src="https://github.com/user-attachments/assets/4e514160-4ace-49c4-82f8-0f694cdb46e7" />
+
+
 
 
 ## Result:
